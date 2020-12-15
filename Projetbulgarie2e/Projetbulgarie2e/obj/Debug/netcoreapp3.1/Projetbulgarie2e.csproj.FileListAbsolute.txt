@@ -1,0 +1,12 @@
+/Users/guesdonhippolyte/Projects/Projetbulgarie2e/Projetbulgarie2e/obj/Debug/netcoreapp3.1/Projetbulgarie2e.csprojAssemblyReference.cache
+/Users/guesdonhippolyte/Projects/Projetbulgarie2e/Projetbulgarie2e/obj/Debug/netcoreapp3.1/Projetbulgarie2e.AssemblyInfoInputs.cache
+/Users/guesdonhippolyte/Projects/Projetbulgarie2e/Projetbulgarie2e/obj/Debug/netcoreapp3.1/Projetbulgarie2e.AssemblyInfo.cs
+/Users/guesdonhippolyte/Projects/Projetbulgarie2e/Projetbulgarie2e/obj/Debug/netcoreapp3.1/Projetbulgarie2e.csproj.CoreCompileInputs.cache
+/Users/guesdonhippolyte/Projects/Projetbulgarie2e/Projetbulgarie2e/bin/Debug/netcoreapp3.1/Projetbulgarie2e.deps.json
+/Users/guesdonhippolyte/Projects/Projetbulgarie2e/Projetbulgarie2e/bin/Debug/netcoreapp3.1/Projetbulgarie2e.runtimeconfig.json
+/Users/guesdonhippolyte/Projects/Projetbulgarie2e/Projetbulgarie2e/bin/Debug/netcoreapp3.1/Projetbulgarie2e.runtimeconfig.dev.json
+/Users/guesdonhippolyte/Projects/Projetbulgarie2e/Projetbulgarie2e/bin/Debug/netcoreapp3.1/Projetbulgarie2e.dll
+/Users/guesdonhippolyte/Projects/Projetbulgarie2e/Projetbulgarie2e/bin/Debug/netcoreapp3.1/Projetbulgarie2e.pdb
+/Users/guesdonhippolyte/Projects/Projetbulgarie2e/Projetbulgarie2e/obj/Debug/netcoreapp3.1/Projetbulgarie2e.dll
+/Users/guesdonhippolyte/Projects/Projetbulgarie2e/Projetbulgarie2e/obj/Debug/netcoreapp3.1/Projetbulgarie2e.pdb
+/Users/guesdonhippolyte/Projects/Projetbulgarie2e/Projetbulgarie2e/obj/Debug/netcoreapp3.1/Projetbulgarie2e.genruntimeconfig.cache
