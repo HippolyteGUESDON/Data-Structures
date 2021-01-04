@@ -68,10 +68,17 @@ namespace projetbulgarie
             Student studentB = new Student("Alex", "Bordas", "735YTY65", 54);
             Student studentC = new Student("Aymeric", "Nativel", "735MLK02", 60);
             Student studentD = new Student("Hippo", "Guesdon", "735IEV24", 99);
+            Student studentE = new Student("Thomas", "Mouly", "735LKE98", 37);
+            Student studentF = new Student("Nico", "Vander", "735FEK02", 86);
+            Student studentG = new Student("Mina", "Guesdon", "735IZV24", 100);
+             
             mydatalist.AddLast(studentA);
             mydatalist.AddLast(studentB);
             mydatalist.AddLast(studentC);
             mydatalist.AddLast(studentD);
+            mydatalist.AddLast(studentE);
+            mydatalist.AddLast(studentF);
+            mydatalist.AddLast(studentG);
         }
         public void AddStudent(Student student)
         {
@@ -80,7 +87,7 @@ namespace projetbulgarie
 
         public void GetElementByIndex(int index)
         {
-            Console.WriteLine(mydatalist.ElementAt(index-1));
+            Console.WriteLine(mydatalist.ElementAt(index));
         }
         public void RemoveElementByIndex(int index)
         {
@@ -94,6 +101,7 @@ namespace projetbulgarie
         {
             mydatalist.RemoveLast();
         }
+
         public void DisplayList()
         {
             if (mydatalist.Count != 0)
@@ -109,8 +117,94 @@ namespace projetbulgarie
                 Console.WriteLine("There is no student in the list ");
             }
         }
-
-
+        public float Bestscore()
+        {
+            int p = 0;
+            float bestscore = 0;
+            for (int i = 0; i < mydatalist.Count; i++)
+            {
+                if (mydatalist.ElementAt(i).averagescore > bestscore)
+                {
+                    bestscore = mydatalist.ElementAt(i).averagescore;
+                    p = i;
+                }
+            }
+            return p;
+        }
+        public float Worstscore()
+        {
+            int p = 0;
+            float worstscore = 100;
+            for (int i = 0; i < mydatalist.Count; i++)
+            {
+                if (mydatalist.ElementAt(i).averagescore < worstscore)
+                {
+                    worstscore = mydatalist.ElementAt(i).averagescore;
+                    p = i;
+                }
+            }
+            return p;
+        }
+        public void Sort(string direction, string field)
+        {
+            if (field == "average")
+            {
+                if (direction == "increasing")
+                {
+                    IEnumerable<Student> query = mydatalist.OrderBy(Student => Student.averagescore);
+                    foreach (Student item in query)
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
+                if (direction == "decreasing")
+                {
+                    IEnumerable<Student> query = mydatalist.OrderByDescending(Student => Student.averagescore);
+                    foreach (Student item in query)
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
+            }
+            if (field == "lastname")
+            {
+                if (direction == "increasing")
+                {
+                    IEnumerable<Student> query = mydatalist.OrderBy(Student => Student.lastname);
+                    foreach (Student item in query)
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
+                if (direction == "decreasing")
+                {
+                    IEnumerable<Student> query = mydatalist.OrderByDescending(Student => Student.lastname);
+                    foreach (Student item in query)
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
+            }
+            if (field == "firstname")
+            {
+                if (direction == "increasing")
+                {
+                    IEnumerable<Student> query = mydatalist.OrderBy(Student => Student.firstname);
+                    foreach (Student item in query)
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
+                if (direction == "decreasing")
+                {
+                    IEnumerable<Student> query = mydatalist.OrderByDescending(Student => Student.firstname);
+                    foreach (Student item in query)
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
+            }
+        }
     }
     public class Program
     {
@@ -140,7 +234,7 @@ namespace projetbulgarie
             }
             return Convert.ToInt32(nombre);
         }
-        private static void Display(LinkedList<Student> student)
+        private static void Display(List<Student> student)
         {
             foreach (Student word in student)
             {
@@ -153,11 +247,10 @@ namespace projetbulgarie
         static void Main(string[] args)
         {
             NewDataList mydatalist = new NewDataList();
-
             bool boucle = false;
             while (boucle == false)
             {
-                Console.WriteLine("=================================================");
+                /*Console.WriteLine("=================================================");
                 Console.WriteLine("SELECT AN ACTION ");
                 Console.WriteLine("1: Populate with Sample Data ");
                 Console.WriteLine("2: Lenght of the Student Data List ");
@@ -169,8 +262,20 @@ namespace projetbulgarie
                 Console.WriteLine("8: Remove first element ");
                 Console.WriteLine("9: Remove last element ");
                 Console.WriteLine("10: Display the list ");
-                Console.WriteLine("11: QUIT THE PROGRAM ");
                 Console.WriteLine("=================================================");
+                */
+                Console.WriteLine("=================================================");
+                Console.WriteLine("Assignment 2 ");
+                Console.WriteLine("1: Populate with Sample Data ");
+                Console.WriteLine("11: Who has the best score? ");
+                Console.WriteLine("12: who has the lowest score? ");
+                Console.WriteLine("13: Sort by ");
+                Console.WriteLine("=================================================");
+                Console.WriteLine("14: QUIT THE PROGRAM ");
+
+                Console.WriteLine();
+
+
                 int switchcase2 = VoilaUnNombre(Console.ReadLine());
                 switch (switchcase2)
                 {
@@ -239,6 +344,31 @@ namespace projetbulgarie
                         Console.WriteLine("Press any key");
                         Console.ReadKey();
                         break;
+                    case 11:
+                        int g = Convert.ToInt32(mydatalist.Bestscore());
+                        Console.WriteLine("The student with the best score is :");
+                        mydatalist.GetElementByIndex(g);
+                        Console.WriteLine("Press any key");
+                        Console.ReadKey();
+                        break;
+                    case 12:
+                        int h = Convert.ToInt32(mydatalist.Worstscore());
+                        Console.WriteLine("The student with the worst score is :");
+                        mydatalist.GetElementByIndex(h);
+                        Console.WriteLine("Press any key");
+                        Console.ReadKey();
+                        break;
+                    case 13:
+                        
+                        Console.WriteLine("You want to sort by: firstname, lastname or average ?");
+                        string field = Console.ReadLine();
+                        Console.WriteLine("You want to sort by: increasing or decreasing ?");
+                        string direction = Console.ReadLine();
+                        mydatalist.Sort(direction, field);
+                        Console.WriteLine("Press any key");
+                        Console.ReadKey();
+                        break;
+
 
                     default:
                         boucle = true;
